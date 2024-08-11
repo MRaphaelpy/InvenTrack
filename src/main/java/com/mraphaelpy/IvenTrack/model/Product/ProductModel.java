@@ -1,7 +1,16 @@
 package com.mraphaelpy.IvenTrack.model.Product;
+import jakarta.persistence.*;
 
-public class ProductModel{
-    private int id;
+import java.io.Serializable;
+import java.util.UUID;
+
+@Entity
+@Table(name = "product")
+public class ProductModel implements Serializable {
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
     private String name;
     private String description;
     private double price;
@@ -10,7 +19,7 @@ public class ProductModel{
     private int quantity;
 
 
-    public ProductModel(int id, String name, String description, double price, String sku, String category, int quantity) {
+    public ProductModel(UUID id, String name, String description, double price, String sku, String category, int quantity) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -19,7 +28,7 @@ public class ProductModel{
         this.category = category;
         this.quantity = quantity;
     }
-    public ProductModel(){};
+
 
     public ProductModel(String name, String description, double price, String sku, String category, int quantity) {
         this.name = name;
@@ -30,11 +39,11 @@ public class ProductModel{
         this.quantity = quantity;
     }
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
@@ -84,18 +93,5 @@ public class ProductModel{
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-    @Override
-    public String toString() {
-        return "ProductModel{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", price=" + price +
-                ", sku='" + sku + '\'' +
-                ", category='" + category + '\'' +
-                ", quantity=" + quantity +
-                '}';
     }
 }

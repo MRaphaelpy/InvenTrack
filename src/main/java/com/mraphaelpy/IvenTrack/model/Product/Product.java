@@ -1,125 +1,85 @@
 package com.mraphaelpy.IvenTrack.model.Product;
 
-public class Product implements IProduct{
-    private int id;
-    private String name;
-    private String description;
-    private double price;
-    private String sku;
-    private String category;
-    private int quantity;
+import java.util.UUID;
+
+public class Product{
+    private ProductModel productModel;
 
     public Product(ProductModel productModel) {
-        this.id = productModel.getId();
-        this.name = productModel.getName();
-        this.description = productModel.getDescription();
-        this.price = productModel.getPrice();
-        this.sku = productModel.getSku();
-        this.category = productModel.getCategory();
-        this.quantity = productModel.getQuantity();
+        this.productModel = productModel;
     }
 
-    public int getId() {
-        return id;
+
+    public UUID getId() {
+        return productModel.getId();
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(UUID id) {
+        productModel.setId(id);
     }
 
     public String getName() {
-        return name;
+        return productModel.getName();
     }
 
-
     public void setName(String name) {
-        this.name = name;
+        productModel.setName(name);
     }
 
     public String getDescription() {
-        return description;
+        return productModel.getDescription();
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        productModel.setDescription(description);
     }
 
     public double getPrice() {
-        return price;
+        return productModel.getPrice();
     }
 
     public void setPrice(double price) {
-        this.price = price;
+        productModel.setPrice(price);
     }
 
     public String getSku() {
-        return sku;
+        return productModel.getSku();
     }
 
     public void setSku(String sku) {
-        this.sku = sku;
+        productModel.setSku(sku);
     }
 
     public String getCategory() {
-        return category;
+        return productModel.getCategory();
     }
 
     public void setCategory(String category) {
-        this.category = category;
+        productModel.setCategory(category);
     }
 
     public int getQuantity() {
-        return quantity;
+        return productModel.getQuantity();
     }
 
     public void setQuantity(int quantity) {
-        this.quantity = quantity;
+        productModel.setQuantity(quantity);
     }
 
-    public ProductModel toProductModel() {
-        ProductModel productModel = new ProductModel();
-        productModel.setId(this.id);
-        productModel.setName(this.name);
-        productModel.setDescription(this.description);
-        productModel.setPrice(this.price);
-        productModel.setSku(this.sku);
-        productModel.setCategory(this.category);
-        productModel.setQuantity(this.quantity);
+    public ProductModel getProductModel() {
         return productModel;
     }
 
     @Override
     public String toString() {
         return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", price=" + price +
-                ", sku='" + sku + '\'' +
-                ", category='" + category + '\'' +
-                ", quantity=" + quantity +
+                "id=" + productModel.getId() +
+                ", name='" + productModel.getName() + '\'' +
+                ", description='" + productModel.getDescription() + '\'' +
+                ", price=" + productModel.getPrice() +
+                ", sku='" + productModel.getSku() + '\'' +
+                ", category='" + productModel.getCategory() + '\'' +
+                ", quantity=" + productModel.getQuantity() +
                 '}';
     }
-
-    @Override
-    public void createProduct(Product product) {
-
-    }
-
-    @Override
-    public void updateProduct(Product product) {
-
-    }
-
-    @Override
-    public void deleteProduct(Product product) {
-
-    }
-
-    @Override
-    public Product getProductById(int id) {
-
-        return null;
-    }
-
 }
