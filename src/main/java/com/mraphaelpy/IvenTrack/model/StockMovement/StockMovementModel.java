@@ -1,15 +1,22 @@
 package com.mraphaelpy.IvenTrack.model.StockMovement;
 
-import java.util.Date;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
-public class StockMovementModel {
-    private int id;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.UUID;
+
+@Entity
+@Table(name = "stock_movement")
+public class StockMovementModel implements Serializable {
+    private UUID id;
     private int productId;
     private int quantity;
     private String type; // in or out
     private Date timestamp;
 
-    public StockMovementModel(int id, int productId, int quantity, String type, Date timestamp) {
+    public StockMovementModel(UUID id, int productId, int quantity, String type, Date timestamp) {
         this.id = id;
         this.productId = productId;
         this.quantity = quantity;
@@ -23,37 +30,44 @@ public class StockMovementModel {
         this.type = type;
         this.timestamp = timestamp;
     }
-    void setId(int id) {
-        this.id = id;
-    }
-    void setProductId(int productId) {
-        this.productId = productId;
-    }
-    void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-    void setType(String type) {
-        this.type = type;
-    }
-    void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
-    }
-    int getId() {
+
+    public UUID getId() {
         return id;
     }
-    int getProductId() {
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public int getProductId() {
         return productId;
     }
-    int getQuantity() {
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public int getQuantity() {
         return quantity;
     }
-    String getType() {
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getType() {
         return type;
     }
-    Date getTimestamp() {
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Date getTimestamp() {
         return timestamp;
     }
 
-
-
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
+    }
 }

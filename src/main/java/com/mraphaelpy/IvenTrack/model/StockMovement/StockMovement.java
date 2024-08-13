@@ -1,61 +1,61 @@
 package com.mraphaelpy.IvenTrack.model.StockMovement;
 
 import java.util.Date;
+import java.util.UUID;
 
-public class StockMovement implements IStockMovement{
-    private int id;
-    private int productId;
-    private int quantity;
-    private String type; // in or out
-    private Date timestamp;
+public class StockMovement  {
+  private StockMovementModel stockMovimenteModel;
 
-    StockMovement(StockMovementModel stockMovementModel) {
-        this.id = stockMovementModel.getId();
-        this.productId = stockMovementModel.getProductId();
-        this.quantity = stockMovementModel.getQuantity();
-        this.type = stockMovementModel.getType();
-        this.timestamp = stockMovementModel.getTimestamp();
+    public StockMovement(StockMovementModel stockMovimenteModel) {
+        this.stockMovimenteModel = stockMovimenteModel;
     }
 
-    @Override
-    public void recordEntry(StockMovement stockMovement) {
-        stockMovement.type = "in";
+    public UUID getId() {
+        return stockMovimenteModel.getId();
     }
 
-    @Override
-    public void recordExit(StockMovement stockMovement) {
-        stockMovement.type = "out";
-    }
-    void setId(int id) {
-        this.id = id;
-    }
-    void setProductId(int productId) {
-        this.productId = productId;
-    }
-    void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-    void setType(String type) {
-        this.type = type;
+    public void setId(UUID id) {
+        stockMovimenteModel.setId(id);
     }
 
-    void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
+    public int getProductId() {
+        return stockMovimenteModel.getProductId();
     }
-    int getId() {
-        return id;
+
+    public void setProductId(int productId) {
+        stockMovimenteModel.setProductId(productId);
     }
-    int getProductId() {
-        return productId;
+
+    public int getQuantity() {
+        return stockMovimenteModel.getQuantity();
     }
-    int getQuantity() {
-        return quantity;
+
+    public void setQuantity(int quantity) {
+        stockMovimenteModel.setQuantity(quantity);
     }
-    String getType() {
-        return type;
+
+    public String getType() {
+        return stockMovimenteModel.getType();
     }
-    Date getTimestamp() {
-        return timestamp;
+
+    public void setType(String type) {
+        stockMovimenteModel.setType(type);
+    }
+
+    public Date getTimestamp() {
+        return stockMovimenteModel.getTimestamp();
+    }
+
+    public void setTimestamp(Date timestamp) {
+        stockMovimenteModel.setTimestamp(timestamp);
+    }
+
+    public StockMovementModel getStockMovimenteModel() {
+        return stockMovimenteModel;
+    }
+
+    public void setStockMovimenteModel(StockMovementModel stockMovimenteModel) {
+        this.stockMovimenteModel = stockMovimenteModel;
     }
 
 }
