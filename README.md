@@ -62,8 +62,8 @@ Este projeto é uma API de Gestão de Estoque desenvolvida para gerenciar produt
 ## Tecnologias Utilizadas (Podem mudar, mas sera atualizado com o decorrer do projeto)
 
 - **Backend**: Spring Boot.
-- **Banco de Dados**: MySQL,
-- **Autenticação**: (JWT)
+- **Banco de Dados**: PostgreSQL,
+- **Autenticação**: (JWT),
 - **Notificações**: (Ainda nao imagino como o fazer)
 - **Deploy**: Docker (Uma das melhores coisas inventadas :))
 - **FrontEnd**: Flutter ou React (com o tempo att esse markdown).
