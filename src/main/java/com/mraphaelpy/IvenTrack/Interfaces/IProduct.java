@@ -1,4 +1,7 @@
-package com.mraphaelpy.IvenTrack.model.Product;
+package com.mraphaelpy.IvenTrack.Interfaces;
+
+import com.mraphaelpy.IvenTrack.Models.Product.Product;
+import com.mraphaelpy.IvenTrack.Models.Product.ProductModel;
 
 import java.util.UUID;
 

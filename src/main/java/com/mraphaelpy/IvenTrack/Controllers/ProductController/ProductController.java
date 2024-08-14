@@ -1,8 +1,8 @@
 package com.mraphaelpy.IvenTrack.Controllers.ProductController;
 
-import com.mraphaelpy.IvenTrack.model.Product.IProduct;
-import com.mraphaelpy.IvenTrack.model.Product.Product;
-import com.mraphaelpy.IvenTrack.model.Product.ProductModel;
+import com.mraphaelpy.IvenTrack.Interfaces.IProduct;
+import com.mraphaelpy.IvenTrack.Models.Product.Product;
+import com.mraphaelpy.IvenTrack.Models.Product.ProductModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 

@@ -1,9 +1,9 @@
 package com.mraphaelpy.IvenTrack.Controllers.StockMovement;
 
 import com.mraphaelpy.IvenTrack.Repository.StockMovementRepository.StockMovementRepository;
-import com.mraphaelpy.IvenTrack.model.StockMovement.IStockMovement;
-import com.mraphaelpy.IvenTrack.model.StockMovement.StockMovement;
-import com.mraphaelpy.IvenTrack.model.StockMovement.StockMovementModel;
+import com.mraphaelpy.IvenTrack.Interfaces.IStockMovement;
+import com.mraphaelpy.IvenTrack.Models.StockMovement.StockMovement;
+import com.mraphaelpy.IvenTrack.Models.StockMovement.StockMovementModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -21,7 +21,7 @@ public class StockMovementController implements IStockMovement {
     public void recordEntry(StockMovement stockMovement) {
         StockMovementModel stockMovementModel = stockMovement.getStockMovimenteModel();
         stockMovementModel.setType("ENTRY");
-        stockMovementRepository.save(stockMovementModel);
+        stockMovementModel.setQuantity(stockMovementModel.getQuantity());
     }
 
     @Override

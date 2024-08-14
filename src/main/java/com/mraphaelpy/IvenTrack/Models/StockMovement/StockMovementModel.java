@@ -1,7 +1,10 @@
-package com.mraphaelpy.IvenTrack.model.StockMovement;
+package com.mraphaelpy.IvenTrack.Models.StockMovement;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
+import jakarta.persistence.Id;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -10,6 +13,8 @@ import java.util.UUID;
 @Entity
 @Table(name = "stock_movement")
 public class StockMovementModel implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private int productId;
     private int quantity;
@@ -25,6 +30,7 @@ public class StockMovementModel implements Serializable {
     }
 
     public StockMovementModel(int productId, int quantity, String type, Date timestamp) {
+        this.id = UUID.randomUUID();
         this.productId = productId;
         this.quantity = quantity;
         this.type = type;
