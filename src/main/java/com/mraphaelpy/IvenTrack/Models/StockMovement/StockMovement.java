@@ -1,4 +1,4 @@
-package com.mraphaelpy.IvenTrack.model.StockMovement;
+package com.mraphaelpy.IvenTrack.Models.StockMovement;
 
 import java.util.Date;
 import java.util.UUID;
